@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project helps healthcare teams identify and understand adverse events in clinical data. It combines advanced analytics with clear explanations, making it easier to improve patient safety and meet compliance requirements. The system is modular and easy to extend or integrate with other tools.
+This project helps healthcare teams identify and understand adverse events in clinical data. You can try the **live app** here: [Clinical AE Assessment](https://clinical-ae-agent-bmj4hszpwa-uc.a.run.app/). It combines advanced analytics with clear explanations, making it easier to improve patient safety and meet compliance requirements. The system is modular and easy to extend or integrate with other tools.
 
 ## Key Features
 
@@ -17,7 +17,7 @@ This project helps healthcare teams identify and understand adverse events in cl
 The repository is organized at the top level. Each main folder has its own README with more details:
 
 ```
-clinical-adverse-event-detection-ai/
+ai-clinical-ae-detection/
 │
 └── backend/
     ├── agent/      # Assessment intake, contract validation, adverse event detection
@@ -26,8 +26,8 @@ clinical-adverse-event-detection-ai/
 
 ### Folder Overview
 
-- **backend/agent/**: Handles assessment intake, contract validation, and adverse event detection. Includes the API server, models, and test outputs. Use `.env` files for environment variables and `requirements.txt` for dependencies.
-- **backend/ingestion/**: Manages data ingestion and creates vector embeddings for analysis. Contains scripts, utilities, and its own environment setup.
+- **backend/agent/**: Handles assessment intake, contract validation, and adverse event detection. Includes the API server, models, and test outputs. Copy `.env.example` to `.env` (root `.gitignore` excludes `.env`) and use `requirements.txt` for dependencies.
+- **backend/ingestion/**: Manages data ingestion and creates vector embeddings for analysis. Contains scripts, utilities, and its own environment setup. Same pattern: use `.env.example` and `.env` as needed.
 
 Test outputs and sample data are in the `test/outputs/` and `test/data/` folders of each backend module.
 
@@ -57,8 +57,8 @@ See each folder's README for setup and usage instructions.
 #### 1. Clone and Navigate
 
 ```bash
-git clone <repository-url>
-cd clinical-adverse-event-detection-ai
+git clone https://github.com/tallapallydheeraj/ai-clinical-ae-detection.git
+cd ai-clinical-ae-detection
 ```
 
 #### 2. Backend Setup
