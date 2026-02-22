@@ -1,0 +1,12 @@
+python-dotenv>=1.0.1        # load .env
+langchain-openai>=0.2.5     # Azure OpenAI embeddings wrapper (semantic + chunk embeddings)
+sentence-transformers>=3.0.1 # HuggingFace local embeddings (optional, for EMBEDDINGS_PROVIDER=huggingface)
+numpy>=1.26.4               # embedding normalization and similarity math
+pymongo>=4.8.0              # Mongo persistence
+pymongo[aws]                # (optional) AWS IAM auth support for Atlas
+boto3>=1.35.0               # S3 contract loading (qa/prod) and OpenSearch AWS SigV4
+opensearch-py>=2.3.0        # AWS OpenSearch backend
+requests-aws4auth>=1.2.3    # AWS SigV4 auth for OpenSearch
+tiktoken>=0.7.0             # fast token counting for chunk size control (optional)
+pytest>=8.0.0               # testing framework (dev/prod CI)
+spacy>=3.7.0               # sentence boundary detection (optional)

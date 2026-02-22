@@ -1,0 +1,83 @@
+# Python cache and compiled files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Environment and secrets (NEVER include in image)
+*.env
+.env
+.env.*
+*.secret
+*.key
+
+# Virtual environment directories
+.venv/
+venv/
+ENV/
+env/
+
+# Docker-related files
+docker-compose*.yml
+.dockerignore
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+*.bak
+*.cache
+
+# Test directories
+# test/
+# tests/
+# __tests__/
+# *.test.py
+# *.spec.py
+
+# IDE and editor files
+.vscode/
+.idea/
+*.sublime-*
+.project
+.pydevproject
+
+# Version control
+.git/
+.gitignore
+.gitattributes
+
+# Documentation
+*.md
+docs/
+README*
+LICENSE
+
+# CI/CD files
+.github/
+.gitlab-ci.yml
+.travis.yml
+Jenkinsfile
+
+# Certificate files (exclude private keys and most certs)
+*.key
+*.crt
+*.cer
+# Note: combined-ca-bundle.pem is intentionally NOT excluded - it's needed for SSL
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Other development files
+*.coverage
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/

@@ -1,0 +1,29 @@
+Adempas (ADMP, ADTP, ADQS, ADAP, ADFT)
+
+Adverse Event (AE) (shall also apply to medical devices and combination products used in conjunction with Product) is any untoward medical occurrence in a patient or clinical trial subject administered a medicinal product and which does not necessarily have a causal relationship with this treatment.
+
+The following cases, with or without an AE, must be reported
+
+• Exposure via mother/father (exposure during conception, pregnancy, childbirth and breastfeeding)
+
+• Drug interactions
+
+• Addiction I Dependence
+
+• Withdrawal syndrome
+
+• Lack of Drug Effect I Lack of Effect
+
+• Suspected transmission of an infectious agent
+
+• Accidental exposure
+
+• Accidental or intentional misuse, abuse, or overdose
+
+• Medication error including, but not limited to, inappropriate administration
+
+• Intentional product use issues resulting in an AE
+
+• Occupational and environmental exposure
+
+• Unexpected therapeutic benefit (pre-existing condition improved)

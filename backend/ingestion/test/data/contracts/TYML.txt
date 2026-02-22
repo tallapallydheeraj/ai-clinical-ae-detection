@@ -1,0 +1,16 @@
+Tymlos (TYML)
+
+Events that are not suspected to be related to Tymlos by the reporter are not considered adverse events and not reportable to Radius.
+
+Adverse Event is defined as any untoward medical occurrence in a patient administered medicinal product, which does not necessarily have a causal relationship with the treatment.
+An adverse event can therefore be any unfavorable and unintended sign (for example, an abnormal laboratory findings), symptom, or disease temporarily associated with the use of a medical product.
+ A special situation concerning the product includes:
+reports of off-label use with an associated Adverse Event
+misuse
+occupational exposure
+medication error resulting from manufacturer labeling, packaging, or characteristics of the Product
+falsified (counterfeit) product
+use of the Product during pregnancy or breastfeeding
+suspected transmission of an infectious agent
+unintended beneficial effect
+diversion (illegal, generally non-medical use)

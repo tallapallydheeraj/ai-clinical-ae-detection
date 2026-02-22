@@ -1,0 +1,76 @@
+###############################
+# Environment & secrets
+###############################
+.env
+.env.*
+*.env
+*.secret
+!.env.example
+
+###############################
+# Python
+###############################
+venv/
+.venv/
+ENV/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+build/
+dist/
+downloads/
+eggs/
+.eggs/
+*.egg-info/
+*.egg
+pip-wheel-metadata/
+*.manifest
+*.spec
+.pytest_cache/
+.hypothesis/
+.cache/
+.mypy_cache/
+dmypy.json
+.dmypy.json
+__pypackages__/
+.ipynb_checkpoints
+
+###############################
+# Logs & reports
+###############################
+*.log
+coverage.xml
+*.cover
+.coverage
+.coverage.*
+htmlcov/
+
+###############################
+# IDE / Editor
+###############################
+.vscode/
+.idea/
+*.swp
+*.swo
+
+###############################
+# OS / Misc
+###############################
+.DS_Store
+Thumbs.db
+
+###############################
+# Temporary / scratch
+###############################
+tmp/
+temp/
+*.tmp
+*.bak
+
+###############################
+# Security (cert private keys)
+###############################
+*.key
+*.crt
+*.pem

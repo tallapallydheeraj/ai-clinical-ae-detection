@@ -1,0 +1,107 @@
+version: '3.8'
+
+services:
+  agent:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        SPACY_MODEL: en_core_web_lg
+    container_name: clinical-ae-agent
+    ports:
+      - "8080:8080"
+    environment:
+      # --- Core ---
+      ENVIRONMENT: dev
+      AE_PROJECT_NAME: clinical-adverse-event-agent
+      AE_LOG_LEVEL: INFO
+      AE_PERSIST_DECISIONS: "false"
+      AE_ASYNC_PIPELINE: "false"
+      ENV_PATH: ""
+      
+      # --- Startup dependency wait (Mongo + LLM) ---
+      AE_SKIP_STARTUP_WAIT: "false"
+      AE_STARTUP_MAX_RETRIES: "3"
+      AE_STARTUP_RETRY_SECONDS: "5"
+      AE_LLM_STARTUP_PROMPT: "health readiness probe"
+      
+      # --- MongoDB (required for retrieval; vector search aborts if unreachable) ---
+      AE_MONGO_AUTH_MECHANISM: ""
+      AE_MONGO_CLUSTER_HOST: ""
+      AE_MONGO_URI: "mongodb+srv:<fill_this>"
+      MONGODB_DB_NAME: pharmacovigilance
+      MONGODB_CONTRACTS_COLLECTION: contracts
+      AE_MONGO_VECTOR_INDEX: contracts_vector_index
+      MONGODB_SERVER_SELECTION_MS: "30000"
+      AE_MONGO_CONNECT_RETRIES: "3"
+      AE_MONGO_CONNECT_BACKOFF_MS: "500"
+      
+      # --- Azure OAuth (alternative to API key) ---
+      # AE_AZURE_OAUTH_TOKEN_URL: ""
+      # AE_AZURE_OAUTH_SCOPE: ""
+      # AE_AZURE_OAUTH_TOKEN_BUFFER_SECONDS: "300"
+      # AE_AZURE_OAUTH_CLIENT_ID: ""
+      # AE_AZURE_OAUTH_CLIENT_SECRET: ""
+      
+      # --- Embedding Provider ---
+      AE_EMBED_PROVIDER: huggingface
+      AE_EMBED_DIM: "384"
+      AE_EMBEDDING_TOP_K: "6"
+      
+      # --- Azure OpenAI Embeddings (AE_EMBED_PROVIDER=azure) ---
+      AE_EMBED_DEPLOYMENT: ""
+      AE_AZURE_API_VERSION: ""
+      AE_AZURE_ENDPOINT: ""
+      AE_AZURE_API_KEY: ""
+      
+      # --- HuggingFace Embeddings (AE_EMBED_PROVIDER=huggingface) ---
+      AE_HUGGINGFACE_EMBED_MODEL: all-MiniLM-L6-v2
+      AE_HUGGINGFACE_DEVICE: cpu
+      
+      # --- LLM Provider ---
+      AE_LLM_PROVIDER: groq
+      AE_LLM_TEMPERATURE: "1"
+      AE_LLM_MAX_TOKENS: "2000"
+      AE_FORCE_JSON: "true"
+      
+      # --- Azure OpenAI LLM (AE_LLM_PROVIDER=azure) ---
+      AE_AZURE_CHAT_DEPLOYMENT: "mixtral-8x7b-32768"
+      
+      # --- Groq LLM (AE_LLM_PROVIDER=groq) ---
+      AE_GROQ_API_KEY: "<fill_this>"
+      AE_GROQ_MODEL: "llama-3.3-70b-versatile"
+      
+      # --- HuggingFace LLM (AE_LLM_PROVIDER=huggingface) ---
+      AE_HUGGINGFACE_LLM_MODEL: "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+      
+      # --- Ollama LLM (AE_LLM_PROVIDER=llama or ollama) ---
+      AE_LLAMA_MODEL: llama3.2
+      AE_OLLAMA_BASE_URL: "http://localhost:11434"
+      
+      # --- Filtering Defaults ---
+      AE_FILTER_IMPORTANT_DEFAULT: "true"
+      AE_FILTER_USE_KEYWORDS_DEFAULT: "false"
+      
+      # --- PHI Redaction ---
+      AE_REDACT_PHI: "true"
+      
+      # --- LangSmith Observability (Optional) ---
+      LANGSMITH_TRACING_V2: "true"
+      LANGSMITH_API_KEY: "<fill_this>"
+      LANGSMITH_PROJECT: clinical-ae-agent
+      LANGSMITH_ENDPOINT: "https://api.smith.langchain.com"
+      AE_LANGSMITH_LOG_DECISIONS: "false"
+    
+    networks:
+      - clinical-ae-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  clinical-ae-network:
+    driver: bridge

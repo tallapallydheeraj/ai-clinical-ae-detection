@@ -1,0 +1,227 @@
+{
+  "id": "resp-002",
+  "resourceType": "QuestionnaireResponse",
+  "questionnaireResourceId": "qr-002",
+  "questionnaireTitle": "Telephonic Nurse AE PC Documentation",
+  "identifier": {
+    "value": "AE-REPORTING-002"
+  },
+  "status": "completed",
+  "subject": "Questionnaire Response",
+  "author": {
+    "resourceType": "Organization",
+    "name": "Healthcare Provider"
+  },
+  "source": {
+    "reference": "Patient",
+    "identifier": [{ "value": "patient-002" }]
+  },
+  "partOf": {
+    "reference": "Medication",
+    "identifier": [
+      { "value": "TYML", "assigner": "therapyType" },
+      { "value": "ACCREDONURSING", "assigner": "categoryCode" }
+    ]
+  },
+  "authored": [2025, 9, 17, 13, 48, 23, 22000000],
+  "meta": {
+    "lastUpdatedDate": [2025, 9, 17, 13, 48, 23, 22000000]
+  },
+  "item": [
+    {
+      "linkId": "MEDICATION",
+      "text": "Drug name",
+      "answer": [{ "valueString": "Tymlos" }],
+      "extension": []
+    },
+    {
+      "linkId": "SPOKEWITH",
+      "text": "Is the reporter the patient or the prescriber?",
+      "answer": [
+        { "valueCoding": { "code": "patient", "display": "Patient" } }
+      ],
+      "extension": []
+    },
+    {
+      "linkId": "RPTNAME",
+      "text": "Reporter name if not patient or prescriber:",
+      "answer": [{ "valueString": "Report Name" }],
+      "extension": []
+    },
+    {
+      "linkId": "RPTPHONENO",
+      "text": "Reporter contact information if not patient or HCP:",
+      "answer": [{ "valueString": "test" }],
+      "extension": []
+    },
+    {
+      "linkId": "RPTPT",
+      "text": "Reporter relationship to patient if not HCP:",
+      "answer": [{ "valueString": "test" }],
+      "extension": []
+    },
+    {
+      "linkId": "DATE",
+      "text": "Date Accredo was notified.",
+      "answer": [{ "valueDate": "2025-09-17" }],
+      "extension": []
+    },
+    {
+      "linkId": "DCTX",
+      "text": "Was the drug stopped?",
+      "answer": [
+        {
+          "valueCoding": {
+            "code": "A1-no-drug-was-not-stopped-patient-continues-therapy",
+            "display": "No drug was not stopped patient continues therapy"
+          }
+        }
+      ],
+      "extension": []
+    },
+    {
+      "linkId": "DOSE",
+      "text": "Was the dosage adjusted?",
+      "answer": [{ "valueString": "no" }],
+      "extension": []
+    },
+    {
+      "linkId": "ADETIMEEVENT",
+      "text": "What was the date of onset of the AE?",
+      "answer": [{ "valueString": "today" }],
+      "extension": []
+    },
+    {
+      "linkId": "ADEPTCOMPLAINT",
+      "text": "Verbatim AE or PC reported?",
+      "answer": [{ "valueString": "broke leg skiing" }],
+      "extension": []
+    },
+    {
+      "linkId": "REPORT",
+      "text": "Was the report solicited?",
+      "answer": [{ "valueCoding": { "code": "No", "display": "No" } }],
+      "extension": []
+    },
+    {
+      "linkId": "HOSPITALIZATION",
+      "text": "Was the patient hospitalized?",
+      "answer": [{ "valueCoding": { "code": "No", "display": "No" } }],
+      "extension": []
+    },
+    {
+      "linkId": "RESOLVED",
+      "text": "Has the AE resolved?",
+      "answer": [
+        { "valueCoding": { "code": "resolved", "display": "Resolved" } }
+      ],
+      "extension": []
+    },
+    {
+      "linkId": "DATERESOLVED",
+      "text": "If resolved, what date was it resolved?",
+      "answer": [{ "valueString": "n/a" }],
+      "extension": []
+    },
+    {
+      "linkId": "COMMENTS",
+      "text": "Additional information provided about the event.",
+      "answer": [{ "valueString": "none" }],
+      "extension": []
+    },
+    {
+      "linkId": "ADEREPRODUCTED",
+      "text": "If female, is she pregnant?",
+      "answer": [
+        {
+          "valueCoding": {
+            "code": "n/a-not-of-childbearing-potential",
+            "display": "N/A-not of childbearing potential"
+          }
+        }
+      ],
+      "extension": []
+    },
+    {
+      "linkId": "ADEREPRODUCTED2",
+      "text": "If male, is his partner pregnant?",
+      "answer": [
+        { "valueCoding": { "code": "unknown", "display": "Unknown" } }
+      ],
+      "extension": []
+    },
+    {
+      "linkId": "ADEREPRODUCTED3",
+      "text": "If unknown:",
+      "answer": [
+        {
+          "valueCoding": {
+            "code": "unknown-by-reporter",
+            "display": "Unknown by reporter"
+          }
+        }
+      ],
+      "extension": []
+    },
+    {
+      "linkId": "CAUSALITY",
+      "text": "Did the reporter assign causality?",
+      "answer": [{ "valueCoding": { "code": "No", "display": "No" } }],
+      "extension": []
+    },
+    {
+      "linkId": "MDCONTACT",
+      "text": "Is the prescriber aware of the AE/PC?",
+      "answer": [{ "valueCoding": { "code": "No", "display": "No" } }],
+      "extension": []
+    },
+    {
+      "linkId": "ADECONTACT",
+      "text": "Does the manufacturer have permission to contact the patient?",
+      "answer": [{ "valueCoding": { "code": "No", "display": "No" } }],
+      "extension": []
+    },
+    {
+      "linkId": "ADECONTACT2",
+      "text": "Does the manufacturer have permission to contact the prescriber?",
+      "answer": [{ "valueCoding": { "code": "No", "display": "No" } }],
+      "extension": []
+    },
+    {
+      "linkId": "ODTCREATE",
+      "text": "Create ODT for AE/PC reporting",
+      "answer": [
+        {
+          "valueCoding": { "code": "A1-odt-created", "display": "ODT created" },
+          "extension": [
+            {
+              "url": "http://example.com/nextBestAction",
+              "valueCoding": [
+                {
+                  "code": "POST",
+                  "display": "ADVERSE_EVENT",
+                  "system": "http://example.org/codesystems"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "extension": []
+    },
+    {
+      "linkId": "COMMENTS2",
+      "text": "Comments:",
+      "answer": [{ "valueString": "comments" }],
+      "extension": []
+    },
+    {
+      "linkId": "URACDOCUMENTEDBY",
+      "text": "Documented by: (Full name (as it appears on your license if applicable) and credentials. i.e. RN, RPh, RD, LSW, PCA, etc.)",
+      "answer": [{ "valueString": "Healthcare Professional" }],
+      "extension": []
+    }
+  ],
+  "extension": [],
+  "resourceId": "res-002"
+}
